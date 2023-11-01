@@ -1,0 +1,19 @@
+import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.*;
+
+public class BookMyShowAutomation {
+    public static void main(String[] args) {
+        System.setProperty("webdriver.chrome.driver", "path_to_chromedriver_executable");
+        WebDriver driver = new ChromeDriver();
+
+        driver.get("https://in.bookmyshow.com/explore/home/");
+        driver.findElement(By.id("city")).click();
+        driver.findElement(By.linkText("Bengaluru")).click();
+        driver.findElement(By.linkText("Sign In")).click();
+        driver.findElement(By.linkText("Continue with Email")).click();
+        driver.findElement(By.id("mobile")).sendKeys("selauto@yopmail.com");
+        driver.findElement(By.id("continueBtn")).click();
+
+        driver.quit();
+    }
+}
